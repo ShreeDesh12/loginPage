@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{% if title %}
+{{ title }}
+{% else %}
+Enter mobile number
+{% endif %}
+{% endblock title %}
+
+{% block content %}
+
+{{ form.hidden_tag() }}
+
+<div class="form-group ">
+    {{ form.number.label(class="form-control-label ") }}
+
+    {% if form.number.errors %}
+    {{ form.number(class="form-control form-control-md is-invalid") }}
+    <div class="invalid-feedback">
+        {% for error in form.number.errors %}
+        <span >{{ error }}</span>
+        {% endfor %}
+    </div>
+    {% else %}
+    {{ form.number(class="form-control form-control-md" , placeholder="+91----------") }}
+    {% endif %}
+</div>
+
+<div class="form-group">
+    {{ form.submit(class="btn btn-primary") }}
+</div>
+
+{% endblock content %}

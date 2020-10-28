@@ -1,0 +1,24 @@
+body{
+    font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.flex-row a{
+    color: #b2e4ee;
+    margin-left: 0;
+}
+
+a{
+    color: #b2e4ee;
+    text-decoration: none;
+}
+.padding div div{
+    padding: 10px;
+}
+
+.packing{
+    padding:10px;
+    background-color: #e9ecef;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+}

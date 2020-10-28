@@ -1,0 +1,31 @@
+body{
+    font-family: 'Josefin Sans', sans-serif !important;
+}
+.packing{
+    margin-top: 20px;
+    margin-left:10% ;
+    margin-right: 10%;
+    padding: 20px;
+    border: dodgerblue solid  1px;
+    box-sizing: border-box;
+
+    border-radius: 5px;
+    max-width: 500px;
+    min-width: 300px;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.flex-row a{
+    color: #b2e4ee;
+    margin-left: 0;
+}
+
+a{
+    color: #b2e4ee;
+    text-decoration: none;
+}
+.padding div div{
+    padding: 10px;
+}

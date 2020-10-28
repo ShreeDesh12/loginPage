@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{% if title %}
+{{ title }}
+{% else %}
+Webpage
+{% endif %}
+{% endblock title %}
+
+{% block info %}
+{% for user in query %}
+<div class="container border-bottom" style="margin: 10px">
+    <div>
+        <span>
+            <b>Firstname : </b>
+        </span>
+
+        <span>
+            {{ user.firstname }}
+        </span>
+    </div>
+    <div>
+        <span>
+            <b>Lastname : </b>
+        </span>
+
+        <span>
+            {{ user.lastname }}
+        </span>
+    </div>
+    <div>
+        <span>
+            <b>Email : </b>
+        </span>
+        <span>
+            {{ user.email }}
+        </span>
+    </div>
+    <div>
+        <span>
+            <b>Date of Birth : </b>
+        </span>
+
+        <span>
+            {{ user.dob }}
+        </span>
+    </div>
+    <div>
+        <span>
+            <b>Mobile number : </b>
+        </span>
+
+        <span>
+            {{ user.number }}
+        </span>
+    </div>
+</div>
+{% endfor %}
+{% endblock info %}
