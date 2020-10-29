@@ -11,46 +11,6 @@ from datetime import date
 
 user = User()
 
-#Your new Phone Number is +12074642648
-def generateOTP(phno):
-    try:
-        from twilio.rest import Client
-        account_sid = 'ACdde6653e686d036a4b77ac5f402ad523'
-        auth_token = '6e3b3b5f8bd09dc6c40b82340e809f19'
-        client = Client(account_sid, auth_token)
-        n = random.randint(1000, 9999)
-        message = client.messages \
-            .create(
-            body='OTP is - ' + str(n),
-            from_='+12074642648',
-            to= str(phno)
-        )
-
-        print(message.sid)
-        return n
-    except twilio.base.exceptions.TwilioRestException:
-        flash('Invalid Mobile number','danger')
-        return redirect(url_for('mobileform'))
-"""
-    from twilio.rest import Client
-    account_sid = 'ACdde6653e686d036a4b77ac5f402ad523'
-    auth_token = '6e3b3b5f8bd09dc6c40b82340e809f19'
-    client = Client(account_sid, auth_token)
-    n = random.randint(1000, 9999)
-    try:
-        message = client.messages \
-            .create(
-            body="OTP : "+str(n),
-            from_='+12074642648',
-            to='+91' + str(phno)
-        )
-        return n
-    except twilio.base.exceptions.TwilioRestException:
-        flash('Invalid Mobile number','danger')
-        return redirect(url_for('mobileform'))
-
-"""
-
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if current_user.is_authenticated:
@@ -114,7 +74,6 @@ def mobileConfirmation():
 
 
 @app.route('/confirm/<token>')
-@login_required
 def confirm_email(token):
     try:
         email = confirm_token(token)
