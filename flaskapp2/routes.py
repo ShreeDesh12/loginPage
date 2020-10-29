@@ -6,7 +6,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 import secrets
 import random
 import twilio
-from flaskapp2.token import generate_confirmation_token, confirm_token, send_email
+from flaskapp2.token import generate_confirmation_token, confirm_token, send_email, generateOTP
 from datetime import date
 
 user = User()
