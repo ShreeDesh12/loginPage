@@ -4,7 +4,7 @@ from flaskapp2 import app
 from flask_mail import Message
 from flaskapp2 import app
 import smtplib
-
+import os
 
 
 def generate_confirmation_token(email):
@@ -26,8 +26,8 @@ def confirm_token(token, expiration=3600):
 
 
 def send_email(to, subject, template):
-    email = 'shreerocker12@gmail.com'
-    password = 'Shree@123'
+    email = os.environ['MY_EMAIL']
+    password = os.environ['MY_PASSWORD']
     with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
         smtp.ehlo()
         smtp.starttls()
