@@ -39,17 +39,16 @@ def send_email(to, subject, template):
         msg = f'Subject: {subject}\n\n{template}'
         smtp.sendmail(email, to, msg)
 
-#Your new Phone Number is +12074642648
 def generateOTP(phno):
     try:
-        account_sid = 'ACdde6653e686d036a4b77ac5f402ad523'
-        auth_token = '6e3b3b5f8bd09dc6c40b82340e809f19'
+        account_sid = os.environ['account_sid']
+        auth_token = os.enviorn['auth_token']
         client = Client(account_sid, auth_token)
         n = random.randint(1000, 9999)
         message = client.messages \
             .create(
             body='OTP is - ' + str(n),
-            from_='+12074642648',
+            from_=  os.environ['my_number'],
             to= str(phno)
         )
 
